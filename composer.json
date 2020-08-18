@@ -18,7 +18,9 @@
     ],
     "require": {
         "php": "~7.2",
-        "code-bushido/foundation": "dev-master"
+        "ext-json": "*",
+        "code-bushido/foundation": "^0.1.0",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=8.0",
@@ -31,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Bushido\\ApiClient\\": "tests"
+            "BushidoTests\\ApiClient\\": "tests"
         }
     },
     "scripts": {

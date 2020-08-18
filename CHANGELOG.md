@@ -1,6 +1,13 @@
 # Changelog
-All notable changes to `Bushido\ApiClient` will be documented in this file.
+All notable changes to this project will be documented in this file.
 
-Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added
+- API Client Exceptions
+- AbstractApiClient
+- ApiClient
 
+[Unreleased]: https://github.com/code-bushido/api-client/compare/0.1.0...master

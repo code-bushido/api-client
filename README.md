@@ -29,6 +29,8 @@ echo $skeleton->echoPhrase('Hello, League!');
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Testing
+> NOTE  
+> Tests will fail if there is no internet connection available or if http://httpbin.org is not reachable.
 
 ``` bash
 $ composer test
