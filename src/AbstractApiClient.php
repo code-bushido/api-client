@@ -210,8 +210,6 @@ abstract class AbstractApiClient
     {
         $headers = array_merge($this->headers, $headers);
 
-        $headers['Content-Length'] = 0; // Issue https://github.com/guzzle/guzzle/issues/1645
-
         if (count($headers) > 0) {
             $options['headers'] = $headers;
         }

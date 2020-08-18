@@ -45,5 +45,4 @@ class ApiClient extends AbstractApiClient
             throw new ErrorResponseException($responseBody['message'], $response->getStatusCode());
         }
     }
-
 }
