@@ -31,7 +31,7 @@ class ApiClientTest extends TestCase
     {
         $api = ApiClient::make('http://httpbin.org/');
 
-        $response = $api->get('get', ['a' => 'b', 'c' => 'd']);
+        $response = $api->get('get', ['a' => 'b', 'c' => 'd'], ['test' => 123]);
 
         $this->assertArrayHasKey('args', $response);
 
@@ -64,5 +64,15 @@ class ApiClientTest extends TestCase
         $api = ApiClient::make('http://httpbin.org/');
 
         $this->assertIsArray($api->patch('patch'));
+    }
+
+    public function testNoContentResponse()
+    {
+        $api = ApiClient::make('http://httpbin.org/');
+
+        $response = $api->post('status/204');
+
+        $this->assertIsArray($response);
+        $this->assertCount(0, $response);
     }
 }
