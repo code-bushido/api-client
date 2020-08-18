@@ -54,7 +54,7 @@ abstract class AbstractApiClient
      * @throws TransportException For errors on transport layer
      * @throws WrongResponseException Response in unexpected format or structure
      */
-    public function get(string $uri, array $query = [], array $headers = [])
+    public function get(string $uri, array $query = [], array $headers = []): array
     {
         return $this->send((new Request('GET', $uri)), [], $query, $headers);
     }
@@ -70,7 +70,7 @@ abstract class AbstractApiClient
      * @throws TransportException For errors on transport layer
      * @throws WrongResponseException Response in unexpected format or structure
      */
-    public function post(string $uri, array $body = [], array $query = [], array $headers = [])
+    public function post(string $uri, array $body = [], array $query = [], array $headers = []): array
     {
         return $this->send((new Request('POST', $uri)), $body, $query, $headers);
     }
@@ -86,7 +86,7 @@ abstract class AbstractApiClient
      * @throws TransportException For errors on transport layer
      * @throws WrongResponseException Response in unexpected format or structure
      */
-    public function put(string $uri, array $body = [], array $query = [], array $headers = [])
+    public function put(string $uri, array $body = [], array $query = [], array $headers = []): array
     {
         return $this->send((new Request('PUT', $uri)), $body, $query, $headers);
     }
@@ -102,7 +102,7 @@ abstract class AbstractApiClient
      * @throws TransportException For errors on transport layer
      * @throws WrongResponseException Response in unexpected format or structure
      */
-    public function patch(string $uri, array $body = [], array $query = [], array $headers = [])
+    public function patch(string $uri, array $body = [], array $query = [], array $headers = []): array
     {
         return $this->send((new Request('PATCH', $uri)), $body, $query, $headers);
     }
@@ -117,7 +117,7 @@ abstract class AbstractApiClient
      * @throws TransportException For errors on transport layer
      * @throws WrongResponseException Response in unexpected format or structure
      */
-    public function delete(string $uri, array $query = [], array $headers = [])
+    public function delete(string $uri, array $query = [], array $headers = []): array
     {
         return $this->send((new Request('DELETE', $uri)), [], $query, $headers);
     }
@@ -150,7 +150,7 @@ abstract class AbstractApiClient
      * @throws WrongResponseException
      * @throws ErrorResponseException
      */
-    private function send(RequestInterface $request, array $body = [], array $query = [], array $headers = [])
+    private function send(RequestInterface $request, array $body = [], array $query = [], array $headers = []): array
     {
         $options = $this->processRequestBody($body);
         $this->processQuery($query, $options);
@@ -172,7 +172,7 @@ abstract class AbstractApiClient
      * @throws ErrorResponseException
      * @throws TransportException
      */
-    protected function handleException(GuzzleException $e, RequestInterface $request)
+    protected function handleException(GuzzleException $e, RequestInterface $request): void
     {
         if ($e instanceof Exception\ClientException) { // 4xx
             $this->processErrorResponse($e->getResponse(), $request);
