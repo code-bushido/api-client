@@ -11,7 +11,8 @@
 namespace Bushido\ApiClient\Exceptions;
 
 /**
- * ErrorResponseException for Error responses that can be handled in a nice way (part of API definition, ex. 404 not found).
+ * ErrorResponseException for Error responses that can be handled in a nice way
+ * (part of API definition, ex. 404 not found).
  */
 class ErrorResponseException extends ApiClientException
 {

@@ -177,7 +177,8 @@ abstract class AbstractApiClient
         if ($e instanceof Exception\ClientException) { // 4xx
             $this->processErrorResponse($e->getResponse(), $request);
             $this->logError(
-                'Api unhandled [' . $e->getResponse()->getStatusCode() . '] Error Response from [' . $request->getUri() . ']',
+                'Api unhandled [' . $e->getResponse()->getStatusCode() .
+                '] Error Response from [' . $request->getUri() . ']',
                 $this->formatBadResponseException($e)
             );
 
